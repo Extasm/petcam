@@ -11,7 +11,9 @@
   if (!window.JitsiMeetExternalAPI) {
     status.textContent = "The call service could not load. Check the internet connection.";
     return;
-  }
+  }  document.querySelector("#loading").hidden = true;
+
+
   const api = new JitsiMeetExternalAPI("meet.jit.si", {
     roomName: `PetCam-${room}`, parentNode: document.querySelector("#app"), width: "100%", height: "100%",
     configOverwrite: { prejoinPageEnabled: false, startWithAudioMuted: isTablet, startWithVideoMuted: isTablet, disableDeepLinking: true, enableWelcomePage: false },

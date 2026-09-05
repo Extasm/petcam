@@ -1,5 +1,5 @@
 (() => {
-  const params = new URLSearchParams(location.hash.slice(1));
+  const params = new URLSearchParams(location.search);
   const room = params.get("room");
   const isTablet = params.get("role") === "tablet";
   const status = document.querySelector("#status");
